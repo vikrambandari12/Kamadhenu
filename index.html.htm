@@ -46,35 +46,56 @@ header {
 /* 🔥 BRAND ALIGNMENT FIX */
 .brand {
   display: flex;
+  flex-direction: column;   /* 🔥 STACK (logo top, text bottom) */
   align-items: center;
   justify-content: center;
-  gap: 12px;
+  text-align: center;
+  gap: 10px;
+
   font-family: 'Playfair Display', serif;
-  font-size: clamp(32px, 8vw, 48px);
   color: var(--pale);
 }
 
-/* LOGO SIZE */
+/* LOGO */
 .logo {
-  height: 110px;
+  height: 120px;
   width: auto;
   object-fit: contain;
 }
 
-/* BIG K */
-.big-k {
-  font-size: 2em;
-  font-weight: bold;
-  line-height: 1;
+/* TEXT */
+.brand-text {
+  font-size: clamp(28px, 6vw, 48px);
+  line-height: 1.2;
 }
 
+/* BIG K */
+.big-k {
+  font-size: 1.2em;
+  font-weight: bold;
+}
+
+/* TAGLINE */
 .tagline {
   font-style: italic;
   color: var(--cream);
-  font-size: 15px;
-  margin-top: 10px;
+  font-size: 14px;
+  margin-top: 8px;
+  text-align: center;
 }
+@media (max-width: 600px) {
+  .logo {
+    height: 90px;
+  }
 
+  .brand-text {
+    font-size: 26px;
+  }
+
+  .tagline {
+    font-size: 13px;
+  }
+}
 /* ================= CTA ================= */
 .cta-bar {
   background: #1a5c2a;
@@ -234,10 +255,13 @@ Thank you 🙏`;
 <header>
   <div class="header-om">ॐ ❈ 卐</div>
 
-  <h1 class="brand">
-    <img src="kamadhenu_snacks/kamadenu-bg-less.png" class="logo">
-    <span><span class="big-k">K</span>amadhenu Foods</span>
-  </h1>
+<h1 class="brand">
+  <img src="kamadhenu_snacks/kamadenu-bg-less.png" class="logo">
+
+  <span class="brand-text">
+    <span class="big-k">K</span>amadhenu Foods
+  </span>
+</h1>
 
   <p class="tagline">"Pure Homemade Sweets, Snacks & Pickles"</p>
 </header>
