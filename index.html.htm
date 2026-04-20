@@ -4,105 +4,254 @@
 <meta charset="UTF-8"/>
 <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
 <title>Kamadhenu Foods — Official Menu</title>
+
 <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,700;1,400&family=Lato:wght@400;700&display=swap" rel="stylesheet"/>
+
 <style>
-  :root {
-    --gold: #d4820a;
-    --bg: #2d1200;
-    --bg2: #3b1a00;
-    --cream: #f5d8b0;
-    --pale: #f5d070;
-    --text: #f5d8b0;
-    --muted: #c07a28;
-    --whatsapp: #25d366;
-  }
-  * { box-sizing: border-box; margin: 0; padding: 0; }
-  body { background: var(--bg); color: var(--text); font-family: 'Lato', sans-serif; min-height: 100vh; }
+:root {
+  --gold: #d4820a;
+  --bg: #2d1200;
+  --bg2: #3b1a00;
+  --cream: #f5d8b0;
+  --pale: #f5d070;
+  --text: #f5d8b0;
+  --muted: #c07a28;
+  --whatsapp: #25d366;
+}
 
-  header {
-    background: linear-gradient(180deg, #5a2000 0%, #2e1200 100%);
-    border-bottom: 3px solid var(--gold);
-    padding: 30px 20px;
-    text-align: center;
-  }
-  .header-om { font-size: 20px; color: var(--gold); opacity: 0.65; letter-spacing: 5px; margin-bottom: 8px; }
-  header h1 { font-family: 'Playfair Display', serif; font-size: clamp(32px, 8vw, 48px); color: var(--pale); letter-spacing: 2px; }
-  .tagline { font-style: italic; color: var(--cream); font-size: 15px; margin-top: 10px; opacity: 0.9; }
+* { box-sizing: border-box; margin: 0; padding: 0; }
 
-  .cta-bar { background: #1a5c2a; padding: 14px; text-align: center; border-bottom: 2px solid var(--whatsapp); position: sticky; top: 0; z-index: 1000; }
-  .cta-bar a { background: var(--whatsapp); color: #000; font-weight: 800; padding: 12px 30px; border-radius: 50px; text-decoration: none; display: inline-flex; align-items: center; gap: 8px; }
+body {
+  background: var(--bg);
+  color: var(--text);
+  font-family: 'Lato', sans-serif;
+}
 
-  main { max-width: 900px; margin: 0 auto; padding: 20px 15px 50px; }
+/* ================= HEADER ================= */
+header {
+  background: linear-gradient(180deg, #5a2000 0%, #2e1200 100%);
+  border-bottom: 3px solid var(--gold);
+  padding: 30px 20px;
+  text-align: center;
+}
 
-  .section-title {
-    font-family: 'Playfair Display', serif;
-    font-size: 22px;
-    text-align: center;
-    margin: 40px 0 20px;
-    padding: 12px;
-    background: linear-gradient(135deg, #c07020, #8b4a00);
-    border-radius: 8px;
-    color: #fff;
-    box-shadow: 0 4px 10px rgba(0,0,0,0.3);
-  }
+.header-om {
+  font-size: 20px;
+  color: var(--gold);
+  opacity: 0.7;
+  letter-spacing: 5px;
+  margin-bottom: 10px;
+}
 
-  .menu-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(320px, 1fr)); gap: 15px; }
+/* 🔥 BRAND ALIGNMENT FIX */
+.brand {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 12px;
+  font-family: 'Playfair Display', serif;
+  font-size: clamp(32px, 8vw, 48px);
+  color: var(--pale);
+}
 
-  .menu-card {
-    background: linear-gradient(135deg, #4a2000, #2e0e00);
-    border: 1px solid rgba(212,130,10,0.4);
-    border-radius: 12px;
-    padding: 15px;
-    display: flex;
-    flex-direction: column;
-    text-decoration: none;
-    transition: 0.3s;
-  }
-  .menu-card:hover { transform: translateY(-3px); border-color: var(--gold); }
+/* LOGO SIZE */
+.logo {
+  height: 110px;
+  width: auto;
+  object-fit: contain;
+}
 
-  .card-body { display: flex; gap: 15px; align-items: center; }
-  .img-box { width: 85px; height: 85px; flex-shrink: 0; border-radius: 8px; overflow: hidden; border: 2px solid var(--gold); }
-  .img-box img { width: 100%; height: 100%; object-fit: cover; }
-  
-  .info { flex: 1; }
-  .name { font-family: 'Playfair Display', serif; font-size: 18px; color: var(--pale); font-weight: 700; }
-  .price { color: #fff; font-weight: 800; display: block; margin: 2px 0; font-size: 15px; }
-  .desc { font-size: 11px; color: var(--muted); line-height: 1.3; }
+/* BIG K */
+.big-k {
+  font-size: 2em;
+  font-weight: bold;
+  line-height: 1;
+}
 
-  .order-btn {
-    margin-top: 12px;
-    background: rgba(37, 211, 102, 0.1);
-    color: var(--whatsapp);
-    border: 1px solid var(--whatsapp);
-    text-align: center;
-    padding: 8px;
-    border-radius: 6px;
-    font-size: 12px;
-    font-weight: 700;
-  }
-  .menu-card:hover .order-btn { background: var(--whatsapp); color: #000; }
-  
-  .unavailable { opacity: 0.6; filter: grayscale(1); pointer-events: none; }
+.tagline {
+  font-style: italic;
+  color: var(--cream);
+  font-size: 15px;
+  margin-top: 10px;
+}
 
-  footer { text-align: center; padding: 40px; color: var(--muted); border-top: 1px solid rgba(212,130,10,0.2); }
+/* ================= CTA ================= */
+.cta-bar {
+  background: #1a5c2a;
+  padding: 14px;
+  text-align: center;
+  border-bottom: 2px solid var(--whatsapp);
+  position: sticky;
+  top: 0;
+  z-index: 1000;
+}
+
+.cta-bar a {
+  background: var(--whatsapp);
+  color: #000;
+  font-weight: 800;
+  padding: 12px 30px;
+  border-radius: 50px;
+  text-decoration: none;
+}
+
+/* ================= MAIN ================= */
+main {
+  max-width: 900px;
+  margin: 0 auto;
+  padding: 20px 15px 50px;
+}
+
+.section-title {
+  font-family: 'Playfair Display', serif;
+  font-size: 22px;
+  text-align: center;
+  margin: 40px 0 20px;
+  padding: 12px;
+  background: linear-gradient(135deg, #c07020, #8b4a00);
+  border-radius: 8px;
+  color: #fff;
+}
+
+/* ================= MENU ================= */
+.menu-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(320px, 1fr));
+  gap: 15px;
+}
+
+.menu-card {
+  background: linear-gradient(135deg, #4a2000, #2e0e00);
+  border-radius: 12px;
+  padding: 15px;
+  text-decoration: none;
+  transition: 0.3s;
+}
+
+.menu-card:hover {
+  transform: translateY(-3px);
+  border: 1px solid var(--gold);
+}
+
+.card-body {
+  display: flex;
+  gap: 15px;
+  align-items: center;
+}
+
+.img-box {
+  width: 85px;
+  height: 85px;
+  border-radius: 8px;
+  overflow: hidden;
+  border: 2px solid var(--gold);
+}
+
+.img-box img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.name {
+  font-family: 'Playfair Display', serif;
+  font-size: 18px;
+  color: var(--pale);
+}
+
+.price {
+  color: #ffffff;   /* pure white */
+  font-weight: 800;
+  display: block;
+  margin: 2px 0;
+  font-size: 15px;
+}
+
+.desc {
+  font-size: 11px;
+  color: var(--muted);
+}
+
+.order-btn {
+  margin-top: 10px;
+  text-align: center;
+  border: 1px solid var(--whatsapp);
+  padding: 8px;
+  border-radius: 6px;
+  color: var(--whatsapp);
+  font-size: 12px;
+}
+
+.menu-card:hover .order-btn {
+  background: var(--whatsapp);
+  color: #000;
+}
+.bulk-note {
+  text-align: center;
+  margin-top: 50px;
+  font-size: 20px;
+  color: var(--pale);
+  font-weight: 1000;
+}
+
+/* ================= FOOTER ================= */
+footer {
+  text-align: center;
+  padding: 30px;
+  color: var(--muted);
+}
 </style>
 </head>
+
+<script>
+document.addEventListener("DOMContentLoaded", function () {
+
+  const phoneNumber = "919908400685";
+
+  document.querySelectorAll(".menu-card").forEach(card => {
+    card.addEventListener("click", function (e) {
+      e.preventDefault();
+
+      const item = this.getAttribute("data-item");
+
+      const message = `Hi 👋,
+I would like to place an order for *${item}*.
+
+Please confirm availability and details.
+
+Thank you 🙏`;
+
+      const url = `https://wa.me/${phoneNumber}?text=${encodeURIComponent(message)}`;
+
+      window.open(url, "_blank");
+    });
+  });
+
+});
+</script>
 <body>
 
 <header>
   <div class="header-om">ॐ ❈ 卐</div>
-  <h1>Kamadhenu Foods</h1>
+
+  <h1 class="brand">
+    <img src="kamadhenu_snacks/kamadenu-bg-less.png" class="logo">
+    <span><span class="big-k">K</span>amadhenu Foods</span>
+  </h1>
+
   <p class="tagline">"Pure Homemade Sweets, Snacks & Pickles"</p>
 </header>
 
 <div class="cta-bar">
-  <a href="https://wa.me/919908400685"><span>💬</span> Message Us to Order</a>
+  <a href="https://wa.me/919908400685?text=Hi%20%F0%9F%91%8B,%20I%20would%20like%20to%20place%20an%20order.%20Please%20share%20the%20menu%20and%20availability.%20Thank%20you%20%F0%9F%99%8F">
+    💬 Message Us to Order
+  </a>
 </div>
 
 <main>
   <div class="section-title">🍬 Traditional Sweets</div>
   <div class="menu-grid">
-    <a href="https://wa.me/919908400685?text=Order:%20Besan%20Laddu%20(650/-kg)" class="menu-card">
+    <a href="#" class="menu-card" data-item="Besan Laddu (650/- kg)">
       <div class="card-body">
         <div class="img-box"><img src="kamadhenu_snacks/besan laddu.jpg" ></div>
         <div class="info">
@@ -113,7 +262,7 @@
       </div>
       <div class="order-btn">ORDER ON WHATSAPP</div>
     </a>
-    <a href="https://wa.me/919908400685?text=Order:%20Dry%20Fruit%20Laddu%20(1500/-kg)" class="menu-card">
+     <a href="#" class="menu-card" data-item="Dry Fruit Laddu (1500/- kg)">
       <div class="card-body">
         <div class="img-box"><img src="kamadhenu_snacks/dry fruit laddu.jpg"></div>
         <div class="info">
@@ -124,7 +273,7 @@
       </div>
       <div class="order-btn">ORDER ON WHATSAPP</div>
     </a>
-    <a href="https://wa.me/919908400685?text=Order:%20Sesame%20Laddu%20(600/-kg)" class="menu-card">
+    <a href="#" class="menu-card" data-item="Sesame Laddu (600/- kg)">
       <div class="card-body">
         <div class="img-box"><img src="kamadhenu_snacks/sesame laddu.jpg"></div>
         <div class="info">
@@ -135,7 +284,7 @@
       </div>
       <div class="order-btn">ORDER ON WHATSAPP</div>
     </a>
-    <a href="https://wa.me/919908400685?text=Order:%20Boondi%20Laddu%20(600/-kg)" class="menu-card">
+    <a href="#" class="menu-card" data-item="Boondi Laddu (600/- kg)">
       <div class="card-body">
         <div class="img-box"><img src="kamadhenu_snacks/boondi laddu.jpg"></div>
         <div class="info">
@@ -146,7 +295,7 @@
       </div>
       <div class="order-btn">ORDER ON WHATSAPP</div>
     </a>
-    <a href="https://wa.me/919908400685?text=Order:%20Garijalu%20(80/-%206pcs)" class="menu-card">
+    <a href="#" class="menu-card" data-item="Garijalu (80/- 6 pcs)">
       <div class="card-body">
         <div class="img-box"><img src="kamadhenu_snacks/garijalu.jpg"></div>
         <div class="info">
@@ -157,7 +306,7 @@
       </div>
       <div class="order-btn">ORDER ON WHATSAPP</div>
     </a>
-    <a href="https://wa.me/919908400685?text=Order:%20Murmura%20Laddu%20(80/-%2012pcs)" class="menu-card">
+    <a href="#" class="menu-card" data-item="Murmura Laddu (80/- 12 pcs)">
       <div class="card-body">
         <div class="img-box"><img src="kamadhenu_snacks/mumura laddu.jpg"></div>
         <div class="info">
@@ -168,7 +317,7 @@
       </div>
       <div class="order-btn">ORDER ON WHATSAPP</div>
     </a>
-    <a href="https://wa.me/919908400685?text=Order:%20Shankarpali%20(450/-kg)" class="menu-card">
+    <a href="#" class="menu-card" data-item="Shankarpali (450/- kg)">
       <div class="card-body">
         <div class="img-box"><img src="kamadhenu_snacks/shankarpali.jpg"></div>
         <div class="info">
@@ -183,7 +332,7 @@
 
   <div class="section-title">🌀 Crunchy Snacks</div>
   <div class="menu-grid">
-    <a href="https://wa.me/919908400685?text=Order:%20Murukkulu%20(500/-kg)" class="menu-card">
+    <a href="#" class="menu-card" data-item="Murukkulu (500/- kg)">
       <div class="card-body">
         <div class="img-box"><img src="kamadhenu_snacks/murkulu.jpg"></div>
         <div class="info">
@@ -194,7 +343,7 @@
       </div>
       <div class="order-btn">ORDER ON WHATSAPP</div>
     </a>
-    <a href="https://wa.me/919908400685?text=Order:%20Namakpara%20(400/-kg)" class="menu-card">
+   <a href="#" class="menu-card" data-item="Namakpara (400/- kg)">
       <div class="card-body">
         <div class="img-box"><img src="kamadhenu_snacks/namakpara.jpg"></div>
         <div class="info">
@@ -205,7 +354,7 @@
       </div>
       <div class="order-btn">ORDER ON WHATSAPP</div>
     </a>
-    <a href="https://wa.me/919908400685?text=Order:%20Appalu%20(400/-kg)" class="menu-card">
+    <a href="#" class="menu-card" data-item="Appalu (400/- kg)">
       <div class="card-body">
         <div class="img-box"><img src="kamadhenu_snacks/Appalu.jpg"></div>
         <div class="info">
@@ -216,7 +365,7 @@
       </div>
       <div class="order-btn">ORDER ON WHATSAPP</div>
     </a>
-    <a href="https://wa.me/919908400685?text=Order:%20Sev%20Namkeen%20(400/-kg)" class="menu-card">
+   <a href="#" class="menu-card" data-item="Sev Namkeen (400/- kg)">
       <div class="card-body">
         <div class="img-box"><img src="kamadhenu_snacks/sev namkeen.jpg"></div>
         <div class="info">
@@ -227,7 +376,7 @@
       </div>
       <div class="order-btn">ORDER ON WHATSAPP</div>
     </a>
-    <a href="https://wa.me/919908400685?text=Order:%20Karampusa%20(500/-kg)" class="menu-card">
+   <a href="#" class="menu-card" data-item="Karampusa (500/- kg)">
       <div class="card-body">
         <div class="img-box"><img src="kamadhenu_snacks/Karampusa.jpg"></div>
         <div class="info">
@@ -242,7 +391,7 @@
 
   <div class="section-title">🥒 Homemade Pickles</div>
   <div class="menu-grid">
-    <a href="https://wa.me/919908400685?text=Order:%20Tomato%20pickle%20(400/-kg)" class="menu-card">
+    <a href="#" class="menu-card" data-item="Tamato Pickle (400/- kg)">
       <div class="card-body">
         <div class="img-box"><img src="kamadhenu_snacks/tamato pickle.jpg"></div>
         <div class="info">
@@ -253,7 +402,7 @@
       </div>
       <div class="order-btn">ORDER ON WHATSAPP</div>
     </a>
-    <a href="https://wa.me/919908400685?text=Order:%20Mango%20pickle%20(500/-kg)" class="menu-card">
+    <a href="#" class="menu-card" data-item="Mango (500/- kg)">
       <div class="card-body">
         <div class="img-box"><img src="kamadhenu_snacks/mango pickle.jpg"></div>
         <div class="info">
@@ -275,7 +424,7 @@
       </div>
       <div class="order-btn">OUT OF STOCK</div>
     </div>
-    <a href="https://wa.me/919908400685?text=Order:%20Pandu%20mirapakaya%20pickle%20(450/-kg)" class="menu-card">
+    <a href="#" class="menu-card" data-item="Pandu Mirapakaya Pickle (450/- kg)">
       <div class="card-body">
         <div class="img-box"><img src="kamadhenu_snacks/pandu mirapakaya pickle.jpg"></div>
         <div class="info">
@@ -286,7 +435,7 @@
       </div>
       <div class="order-btn">ORDER ON WHATSAPP</div>
     </a>
-    <a href="https://wa.me/919908400685?text=Order:%20Chicken%20pickle%20(bone)%20(1000/-kg)" class="menu-card">
+    <a href="#" class="menu-card" data-item="Chicken Pickle (bone) (1000/- kg)">
       <div class="card-body">
         <div class="img-box"><img src="kamadhenu_snacks/bone chicken pickle.jpg"></div>
         <div class="info">
@@ -297,7 +446,7 @@
       </div>
       <div class="order-btn">ORDER ON WHATSAPP</div>
     </a>
-    <a href="https://wa.me/919908400685?text=Order:%20Chicken%20pickle%20(boneless)%20(1300/-kg)" class="menu-card">
+   <a href="#" class="menu-card" data-item="Chicken Pickle (boneless) (1300/- kg)">
       <div class="card-body">
         <div class="img-box"><img src="kamadhenu_snacks/chicken pickle.jpg"></div>
         <div class="info">
@@ -308,7 +457,7 @@
       </div>
       <div class="order-btn">ORDER ON WHATSAPP</div>
     </a>
-    <a href="https://wa.me/919908400685?text=Order:%20Egg%20pickle%20(700/-kg)" class="menu-card">
+    <a href="#" class="menu-card" data-item="Egg Pickle (700/- kg)">
       <div class="card-body">
         <div class="img-box"><img src="kamadhenu_snacks/egg pickle.jpg"></div>
         <div class="info">
@@ -323,7 +472,7 @@
 
   <div class="section-title">🌿 Spice Powders (Podi)</div>
   <div class="menu-grid">
-    <a href="https://wa.me/919908400685?text=Order:%20Ellipaya%20karam%20podi%20(100/-%20200g)" class="menu-card">
+  <a href="#" class="menu-card" data-item="Ellipaya Karam Podi (100/- 200g)">
       <div class="card-body">
         <div class="img-box"><img src="kamadhenu_snacks/ellipaya karam podi.jpg"></div>
         <div class="info">
@@ -334,18 +483,18 @@
       </div>
       <div class="order-btn">ORDER ON WHATSAPP</div>
     </a>
-    <a href="https://wa.me/919908400685?text=Order:%20Nuvvula%20karam%20podi%20(100/-%20200g)" class="menu-card">
+    <a href="#" class="menu-card" data-item="Nuvvula Karam Podi (100/- 100g)">
       <div class="card-body">
         <div class="img-box"><img src="kamadhenu_snacks/nuvulu karam podi.jpg"></div>
         <div class="info">
           <span class="name">Nuvvula karam podi</span>
-          <span class="price">100/- 200g</span>
+          <span class="price">100/- 100g</span>
           <p class="desc">Spicy & pungent</p>
         </div>
       </div>
       <div class="order-btn">ORDER ON WHATSAPP</div>
     </a>
-    <a href="https://wa.me/919908400685?text=Order:%20Karivepaku%20podi%20(100/-%20200g)" class="menu-card">
+    <a href="#" class="menu-card" data-item="Kaivepaku Podi (100/- 200g)">
       <div class="card-body">
         <div class="img-box"><img src="kamadhenu_snacks/karvepaku podi.jpg"></div>
         <div class="info">
@@ -356,7 +505,7 @@
       </div>
       <div class="order-btn">ORDER ON WHATSAPP</div>
     </a>
-    <a href="https://wa.me/919908400685?text=Order:%20Kobari%20karam%20podi%20(100/-%20200g)" class="menu-card">
+    <a href="#" class="menu-card" data-item="Kobari Karam Podi (100/- 200g)">
       <div class="card-body">
         <div class="img-box"><img src="kamadhenu_snacks/kobari karam podi.jpg"></div>
         <div class="info">
@@ -367,7 +516,7 @@
       </div>
       <div class="order-btn">ORDER ON WHATSAPP</div>
     </a>
-    <a href="https://wa.me/919908400685?text=Order:%20Flaxseed%20podi%20(150/-%20200g)" class="menu-card">
+    <a href="#" class="menu-card" data-item="Flaxseed Podi (150/- 200g)">
       <div class="card-body">
         <div class="img-box"><img src="kamadhenu_snacks/flaxseed podi.jpg"></div>
         <div class="info">
@@ -380,7 +529,12 @@
     </a>
   </div>
 </main>
-
+<div class="cta-bar">
+  <a href="https://wa.me/919908400685?text=Hi%20%F0%9F%91%8B,%20I%20would%20like%20to%20place%20an%20order.%20Please%20share%20the%20menu%20and%20availability.%20Thank%20you%20%F0%9F%99%8F">
+    💬 Message Us to Order
+  </a>
+</div>
+<p class="bulk-note">📦 Bulk orders are also accepted</p>
 <footer>
   <p>© 2026 Kamadhenu Foods • Pure • Traditional • Homemade ❤️</p>
 </footer>
